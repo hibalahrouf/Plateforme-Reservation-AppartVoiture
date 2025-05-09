@@ -14,7 +14,8 @@ pipeline {
                 // Run the Semgrep Docker image on Windows
                 script {
                     // Use PowerShell or cmd commands on Windows
-                    bat 'docker run --rm -v "%cd%:/src" returntocorp/semgrep --config=p/owasp-top-ten'
+                    bat 'docker run --rm -v "%WORKSPACE%\\Back:/src" returntocorp/semgrep --config=p/owasp-top-ten'
+
                 }
             }
         }
